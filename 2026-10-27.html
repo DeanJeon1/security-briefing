@@ -65,12 +65,21 @@ background:var(--bg);color:var(--fg);resize:vertical}
 const D = JSON.parse(document.getElementById('data').textContent);
 const ol = document.querySelector('ol'), N = D.items.length, KEY = 'added:' + D.date;
 const params = new URLSearchParams(location.search), pick = params.get('pick');
+// 카톡 메시지의 기사 링크는 이 페이지를 거쳐 원문으로 보낸다 — 카카오는 앱에 등록되지 않은 도메인 링크를
+// 등록 도메인 첫 화면으로 바꿔 버리기 때문 (?go=번호 는 오늘 목록의 기사, ?u=주소 는 직접 추가한 기사)
+const goTo = params.has('go') ? (D.items[+params.get('go')] || {}).u : params.get('u');
+if (goTo && /^https?:\/\//.test(goTo)) { document.documentElement.style.display = 'none'; location.replace(goTo); }
 const esc = s => String(s).replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
 const host = u => { try { return new URL(u).hostname.replace(/^www\./, ''); } catch (e) { return ''; } };
 const load = () => { try { return JSON.parse(localStorage.getItem(KEY)) || []; } catch (e) { return []; } };
 const save = x => { try { localStorage.setItem(KEY, JSON.stringify(x)); } catch (e) {} };
-const b64e = s => btoa(String.fromCharCode(...new TextEncoder().encode(s))).replace(/\+/g, '-').replace(/\//g, '_').replace(/=+$/, '');
-const b64d = s => new TextDecoder().decode(Uint8Array.from(atob(s.replace(/-/g, '+').replace(/_/g, '/')), c => c.charCodeAt(0)));
+const b64u = buf => btoa(String.fromCharCode(...buf)).replace(/\+/g, '-').replace(/\//g, '_').replace(/=+$/, '');
+const unb64u = s => Uint8Array.from(atob(s.replace(/-/g, '+').replace(/_/g, '/')), c => c.charCodeAt(0));
+const pipe = (data, tr) => new Response(new Blob([data]).stream().pipeThrough(tr));
+const deflate = async s => b64u(new Uint8Array(await pipe(s, new CompressionStream('deflate-raw')).arrayBuffer()));
+const inflate = s => pipe(unb64u(s), new DecompressionStream('deflate-raw')).text();
+// 카카오 메시지 크기 제한 — 실측: 템플릿 JSON이 UTF-8로 약 3,600바이트를 넘으면 거절된다 (통과 최대 3,578 / 거절 최소 3,743)
+const MAX_MSG = 3600;
 
 // 직접 추가한 기사 — 이 기기 브라우저에 날짜별로 저장(그날 페이지를 다시 열어도 남는다)
 let extra = pick ? [] : load();
@@ -85,8 +94,12 @@ const addLi = (a, removable) => {
 const lis = () => [...ol.children];
 const renumber = () => lis().forEach((li, i) => { li.querySelector('.no').textContent = i + 1; });
 
-if (pick) {  // 공유받은 사람이 보는 화면: 고른 기사만, 고른 순서대로 (직접 추가한 기사는 주소의 add= 에 실려 온다)
-  try { extra = JSON.parse(b64d(params.get('add') || '')).map(([t, u, s]) => ({ t, u, s: s || host(u) })); } catch (e) { extra = []; }
+const showPicked = async () => {  // 공유받은 사람이 보는 화면: 고른 기사만, 고른 순서대로 (직접 추가한 기사는 주소의 z= 에 압축돼 온다)
+  try {
+    const raw = params.get('z') ? await inflate(params.get('z'))
+      : params.get('add') ? new TextDecoder().decode(unb64u(params.get('add'))) : '[]';  // add= 는 압축 전 옛 링크
+    extra = JSON.parse(raw).map(([t, u, s]) => ({ t, u, s: s || host(u) }));
+  } catch (e) { extra = []; }
   extra.forEach(a => addLi(a, false));
   const order = pick.split(',').map(Number), all = lis();
   document.body.classList.add('view');
@@ -95,7 +108,9 @@ if (pick) {  // 공유받은 사람이 보는 화면: 고른 기사만, 고른 �
   renumber();
   document.querySelector('h1').textContent = '🔐 정보보안 브리핑';
   document.querySelector('header p').textContent = D.date;
-} else {
+};
+if (pick) showPicked();
+else {
   extra.forEach(a => addLi(a, true));
   renumber();
 }
@@ -110,6 +125,18 @@ const sync = () => {
     li.querySelector('.ord').textContent = k >= 0 ? k + 1 : '';
   });
   cnt.textContent = sel.length + '개 선택'; btn.disabled = !sel.length;
+  buildLink();
+};
+// 공유 링크는 고를 때마다 미리 만들어 둔다 (압축이 비동기라 버튼을 누른 순간에 만들면 카톡 전환이 막힐 수 있다)
+let link = null, linkSeq = 0;
+const buildLink = async () => {
+  const seq = ++linkSeq, all = items(), ex = sel.filter(i => i >= N).map(i => all[i]);
+  let k = 0;
+  const u = new URL(location.origin + location.pathname);
+  u.searchParams.set('pick', sel.map(i => i < N ? i : N + k++).join(','));
+  link = null;
+  if (ex.length) u.searchParams.set('z', await deflate(JSON.stringify(ex.map(a => [a.t, a.u, a.s]))));
+  if (seq === linkSeq) link = { page: u.toString(), extra: ex.length };
 };
 ol.addEventListener('change', e => {
   if (!e.target.classList.contains('pick')) return;
@@ -168,26 +195,29 @@ dlg.querySelector('.ok').addEventListener('click', () => {
 });
 
 const L = u => ({ webUrl: u, mobileWebUrl: u });
+const base = location.origin + location.pathname;
+// 주소 안의 주소는 꼭 필요한 글자(% & # +)만 바꿔 넣는다 — 전부 인코딩하면 길어져 메시지 크기 제한에 걸린다
+const via = i => base + (i < N ? '?go=' + i : '?u=' + items()[i].u.replace(/[%&#+]/g, c => '%' + c.charCodeAt(0).toString(16).toUpperCase()));
 btn.addEventListener('click', () => {
   if (!window.Kakao) return alert('카카오 SDK를 불러오지 못했습니다');
+  if (!link) return alert('공유 준비 중입니다. 다시 눌러 주세요');
   if (!Kakao.isInitialized()) Kakao.init(D.key);
   const all = items(), picked = sel.map(i => all[i]);
-  const ex = sel.filter(i => i >= N).map(i => all[i]);
-  let k = 0;
-  const u = new URL(location.href);
-  u.searchParams.set('pick', sel.map(i => i < N ? i : N + k++).join(','));
-  if (ex.length) u.searchParams.set('add', b64e(JSON.stringify(ex.map(a => [a.t, a.u, a.s])))); else u.searchParams.delete('add');
-  const page = u.toString();
   if (picked.length === 1) {
     return Kakao.Share.sendDefault({ objectType: 'text', text: '🔐 ' + picked[0].t + '\n' + picked[0].s,
-      link: L(picked[0].u), buttonTitle: '기사 보기' });
+      link: L(via(sel[0])), buttonTitle: '기사 보기' });
   }
-  Kakao.Share.sendDefault({
+  const tpl = {
     objectType: 'list',
     headerTitle: D.title,
-    headerLink: L(page),
-    contents: picked.slice(0, 3).map(a => ({ title: a.t, description: a.s, link: L(a.u) })),
-    buttons: [{ title: '전체 보기', link: L(page) }],
-  });
+    // 머리말에도 공유 링크를 넣으면 크기 제한에 걸리기 쉬워, 추가 기사가 있으면 머리말은 오늘 전체 목록으로
+    headerLink: L(link.extra ? base : link.page),
+    contents: sel.slice(0, 3).map(i => ({ title: all[i].t, description: all[i].s, link: L(via(i)) })),
+    buttons: [{ title: '전체 보기', link: L(link.page) }],
+  };
+  if (new TextEncoder().encode(JSON.stringify(tpl)).length > MAX_MSG)
+    return alert('카카오 메시지 크기 제한을 넘어 공유할 수 없어요.\n'
+      + '직접 추가한 기사(지금 ' + link.extra + '건)를 몇 개 빼고 다시 공유해 주세요.');
+  Kakao.Share.sendDefault(tpl);
 });
 </script></body></html>
