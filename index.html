@@ -101,7 +101,7 @@ const keyOf = i => i < N ? String(i) : 'x' + extra[i - N].id;  // 고른 기사 
 const lis = () => [...ol.children];
 const renumber = () => lis().forEach((li, i) => { li.querySelector('.no').textContent = i + 1; });
 const renderExtra = (list, removable) => {
-  extra = list;
+  extra = list.filter((a, i) => list.findIndex(x => x.u === a.u) === i);  // 같은 주소는 하나만
   ol.querySelectorAll('li.added').forEach(li => li.remove());
   extra.forEach(a => {
     const li = document.createElement('li'); li.className = 'added';
