@@ -77,6 +77,8 @@ const host = u => { try { return new URL(u).hostname.replace(/^www\./, ''); } ca
 const ls = { get: (k, d) => { try { const v = localStorage.getItem(k); return v === null ? d : JSON.parse(v); } catch (e) { return d; } },
   set: (k, v) => { try { v === null ? localStorage.removeItem(k) : localStorage.setItem(k, JSON.stringify(v)); } catch (e) {} } };
 const LOCAL = 'added:' + D.date, PW = 'store-key';
+// 고르던 기사 — 기사를 열어 보고 돌아와도(페이지가 새로 열려도) 체크가 남게 이 기기에 저장. 같은 날·같은 목록일 때만 되살린다
+const SEL = 'sel:' + DAY, SIG = N + '|' + (D.items[0] || {}).u;
 const b64u = buf => btoa(String.fromCharCode(...buf)).replace(/\+/g, '-').replace(/\//g, '_').replace(/=+$/, '');
 const unb64u = s => Uint8Array.from(atob(s.replace(/-/g, '+').replace(/_/g, '/')), c => c.charCodeAt(0));
 const pipe = (data, tr) => new Response(new Blob([data]).stream().pipeThrough(tr));
@@ -137,9 +139,11 @@ const showPicked = async () => {  // 공유받은 사람이 보는 화면: 고�
 
 const btn = document.querySelector('.bar .share'), cnt = document.querySelector('.bar span');
 let sel = [];  // 고른 순서(기사 표시 키) — 빼면 뒤의 것들이 당겨지고, 새로 고른 건 맨 뒤
+if (!pick) { const saved = ls.get(SEL, null); if (saved && saved.sig === SIG) sel = saved.sel; }
+let ready = !STORE;  // 추가 기사를 불러오기 전엔 저장된 x… 표시를 지우지 않는다
 const sync = () => {
   const keys = lis().map((li, i) => keyOf(i));
-  sel = sel.filter(k => keys.includes(k));
+  if (ready) sel = sel.filter(k => keys.includes(k));
   lis().forEach((li, i) => {
     const k = sel.indexOf(keys[i]);
     li.classList.toggle('on', k >= 0);
@@ -147,6 +151,7 @@ const sync = () => {
     li.querySelector('.ord').textContent = k >= 0 ? k + 1 : '';
   });
   cnt.textContent = sel.length + '개 선택'; btn.disabled = !sel.length;
+  if (!pick) ls.set(SEL, { sig: SIG, sel });
   buildLink();
 };
 const idxOf = k => k[0] === 'x' ? N + extra.findIndex(a => 'x' + a.id === k) : +k;
@@ -270,9 +275,9 @@ else {
   renderExtra(STORE ? [] : ls.get(LOCAL, []).map((a, k) => ({ ...a, id: a.id || "l" + k })), true);
   sync();
   if (STORE) api().then(list => {
-    renderExtra(list, true); sync();
+    ready = true; renderExtra(list, true); sync();
     const left = ls.get(LOCAL, []), key = ls.get(PW, '');
     if (left.length && key) api({ key, items: left }).then(l => { renderExtra(l, true); sync(); ls.set(LOCAL, null); }).catch(() => {});
-  }).catch(() => { cnt.textContent = '추가 기사를 불러오지 못했어요'; });
+  }).catch(() => { ready = true; sync(); cnt.textContent = '추가 기사를 불러오지 못했어요'; });
 }
 </script></body></html>
