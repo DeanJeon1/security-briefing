@@ -1,0 +1,286 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex"><title>정보보안 브리핑 2026-11-28(토)</title><style>
+:root{--bg:#fafafa;--fg:#1a1a1a;--muted:#6b6b6b;--line:#e6e6e6;--link:#1f4fd1;--sel:#fff6cc;--kakao:#fee500}
+@media (prefers-color-scheme:dark){:root{--bg:#141414;--fg:#ececec;--muted:#9a9a9a;--line:#2a2a2a;--link:#8fb0ff;--sel:#3a3416}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--fg);
+font:16px/1.5 -apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Noto Sans KR",sans-serif}
+main{max-width:640px;margin:0 auto;padding:20px 16px 96px}
+h1{font-size:20px;margin:0 0 2px}header p{margin:0 0 12px;color:var(--muted);font-size:13px}
+ol{list-style:none;margin:0;padding:0}
+li{display:flex;gap:10px;align-items:flex-start;padding:12px 4px;border-top:1px solid var(--line)}
+li.on{background:var(--sel)}
+input[type=checkbox]{width:22px;height:22px;margin:2px 0 0;flex:none;accent-color:#1f4fd1}
+.no{color:var(--muted);width:20px;text-align:right;flex:none;font-variant-numeric:tabular-nums}
+a{color:var(--link);text-decoration:none;font-weight:600}a:visited{color:var(--muted)}
+.m{display:block;color:var(--muted);font-size:12px;margin-top:2px}
+.bar{position:fixed;left:0;right:0;bottom:0;padding:10px 16px calc(10px + env(safe-area-inset-bottom));
+background:var(--bg);border-top:1px solid var(--line);display:flex;gap:12px;align-items:center;justify-content:center}
+.bar span{color:var(--muted);font-size:14px}
+.bar button{font:inherit;font-weight:700;border:0;border-radius:10px;padding:10px 18px;background:var(--kakao);color:#191919}
+.bar button:disabled{opacity:.4}
+.ord{flex:none;min-width:22px;height:22px;margin-top:2px;border-radius:11px;background:#1f4fd1;color:#fff;
+font-size:13px;font-weight:700;text-align:center;line-height:22px}.ord:empty{display:none}
+body.view .pick,body.view .ord,body.view .bar{display:none}body.view main{padding-bottom:24px}
+html.picking main,html.picking .bar{visibility:hidden}
+html.picking body::before{content:'불러오는 중…';position:fixed;top:40%;left:0;right:0;text-align:center;color:var(--muted);font-size:14px}
+.bar .add{background:var(--line);color:var(--fg)}
+.del{flex:none;margin-left:auto;border:0;background:none;color:var(--muted);font-size:16px;padding:2px 6px}
+.dlg{position:fixed;inset:0;background:rgba(0,0,0,.45);display:flex;align-items:center;justify-content:center;padding:16px;z-index:10}
+.dlg[hidden]{display:none}
+.dlg>div{width:100%;max-width:560px;background:var(--bg);border-radius:14px;padding:16px}
+.dlg h2{font-size:17px;margin:0 0 4px}.dlg p{margin:0 0 10px;color:var(--muted);font-size:13px}
+.dlg textarea{width:100%;height:45vh;font-family:inherit;font-size:14px;line-height:1.4;padding:10px;border:1px solid var(--line);border-radius:10px;
+background:var(--bg);color:var(--fg);resize:vertical}
+.dlg .pw{width:100%;margin-top:8px;font:inherit;font-size:15px;padding:10px;border:1px solid var(--line);border-radius:10px;background:var(--bg);color:var(--fg)}
+.dlg .pw[hidden]{display:none}
+.dlg .msg{color:#d33;font-size:13px;min-height:18px;margin:6px 0 0}
+.dlg .row{display:flex;gap:8px;justify-content:flex-end;margin-top:8px}
+.dlg button{font:inherit;font-weight:700;border:0;border-radius:10px;padding:10px 18px}
+.dlg .cancel{background:var(--line);color:var(--fg)}.dlg .ok{background:#1f4fd1;color:#fff}
+</style><script>if(/[?&]pick=/.test(location.search))document.documentElement.classList.add("picking")</script></head><body><main><header><h1>🔐 정보보안 주요 언론보도</h1><p>2026-11-28(토) · 11/27 19:00~07:00 · 후보 30건 · 공유할 기사를 체크하세요</p></header><ol><li><input type="checkbox" class="pick" aria-label="공유할 기사 선택"><span class="ord"></span><span class="no">1</span><div><a href="https://news.google.com/rss/articles/CBMiakFVX3lxTE53VlkxSUxLTGl5RTFYem5iOWtudk1GX29URUFiR080UVNaelJzNGFNazhNaldhU1FsRFVtZjhOdV9oYjV4a0JKOVlpR2ZTeU5rempFcnY2VEhlTndWR2pRd1JGN19wY3JvRHc?oc=5">인터넷우체국 해킹에 개인정보 유출… 하루치만 11만명 넘어</a><span class="m">천지일보 · 11/28 00:52 · 관련 보도 10곳</span></div></li>
+<li><input type="checkbox" class="pick" aria-label="공유할 기사 선택"><span class="ord"></span><span class="no">2</span><div><a href="https://news.google.com/rss/articles/CBMiVkFVX3lxTE1vMDVaMDY5c2JfTzR2YXh5QTl6S2VHVEFjcU5fWDJiM3VWaW9mb3dpRWRKN3RZNGk5TlM3SkQ3d0d0ZmJyV0FsZE1yWUoxbjBGTFNXQkZR?oc=5">미 공군 핵심 클라우드 &#x27;클라우드 원&#x27; 해킹 피해</a><span class="m">지디넷코리아 · 11/27 22:28 · 관련 보도 8곳</span></div></li>
+<li><input type="checkbox" class="pick" aria-label="공유할 기사 선택"><span class="ord"></span><span class="no">3</span><div><a href="https://news.google.com/rss/articles/CBMiVkFVX3lxTE0wTFZUVDZuUWx4SFcwM0QtaWdaWENDNEc2WHRXeEI5SVVpa3hzRmJ3Y3VJcHhGbDlrNlpQR2hyRWVsRDhDWTJWelpqclNKWGNhRHVmSEx3?oc=5">이나인페이, 해킹으로 25억원 피해…금감원 현장점검 돌입</a><span class="m">헤럴드경제 · 11/27 20:00 · 관련 보도 7곳</span></div></li>
+<li><input type="checkbox" class="pick" aria-label="공유할 기사 선택"><span class="ord"></span><span class="no">4</span><div><a href="https://news.google.com/rss/articles/CBMiSEFVX3lxTE9ia2hxMkVHTEJPTjBIb0RnM0lFRWItNmV6dm12aElmSkY5bXI5S2NQUWJFSm9MSFJ2YlF1ZHp2MHNhNmFnXzg1Ng?oc=5">개인정보 유출신고 10월까지 1019건…긴급 대응체계 가동</a><span class="m">코리안투데이 · 11/27 22:00 · 관련 보도 5곳</span></div></li>
+<li><input type="checkbox" class="pick" aria-label="공유할 기사 선택"><span class="ord"></span><span class="no">5</span><div><a href="https://news.google.com/rss/articles/CBMiZEFVX3lxTE1yOTh6SFhWX3YwTHh0YjQ5bDlGS0Jtc1NSYUMzcWYxeC1sbEtkWTlDMEQtSS1JbjkxZXQyQ1FrbWFkcTlidEdTaWFvTWVNdFFheVZMbll3Rkxqb2FZMnp5OVZ5VTk?oc=5">유럽 최대 SW업체 SAP 해킹 의혹...AI 동원 가능성</a><span class="m">라디오코리아 · 11/27 21:12 · 관련 보도 3곳</span></div></li>
+<li><input type="checkbox" class="pick" aria-label="공유할 기사 선택"><span class="ord"></span><span class="no">6</span><div><a href="https://news.google.com/rss/articles/CBMiSkFVX3lxTE9RRjR3VXE1Qm9rQTdndkhFcGlnLW5BekFVSHJSQmV1Z3NjVy1hSEgyS3JhWTZxVzZhM3lpRzRKMmpJVzczWDZvaW5B?oc=5">2026년 국내 랜섬웨어 86건, 전년 두 배…기업 보안 예산의 무게가 달라졌다</a><span class="m">뉴스N연합 · 11/28 02:15 · 관련 보도 2곳</span></div></li>
+<li><input type="checkbox" class="pick" aria-label="공유할 기사 선택"><span class="ord"></span><span class="no">7</span><div><a href="https://news.google.com/rss/articles/CBMibkFVX3lxTE55V3lRNE1Da1BDcWFqT2oza091UWc5MXZMc1hZUW5LdnRneUFpWnluNFhlakJXbUs2djR4dG41UUtMcXpwVE9HNk5UODdkSUUwVmFjREV5LUd0S3BlYnNraTdldXpjZXd1dHN4QWFn0gFzQVVfeXFMTVBaaDQ5T2lYaUpHd0hycWM3NHNNZmhNMUtTOXdWdTlqVzhDbzdVemhJLUZ3SlRmQ1hLVmJHRWp0cENXdmRlSHU4VWNNWS1pVTh3RlVTT18tUHVnM2hkYi1TSUcwY1k3QlpMSVlWWlh5UFZUYw?oc=5">미 공군 핵심 시스템도 해킹에 뚫렸다... &quot;민감 전술 유출 가능성&quot;</a><span class="m">한국일보 · 11/28 01:15 · 관련 보도 2곳</span></div></li>
+<li><input type="checkbox" class="pick" aria-label="공유할 기사 선택"><span class="ord"></span><span class="no">8</span><div><a href="https://news.google.com/rss/articles/CBMibkFVX3lxTFBrd2JzOFA5d29vY1MxTnpObkkxYV9TLU5lMFJzUDEyMTV3WHloVy12Zkt2ajNkU3pzRl9CdkY4NFBXSGRvTlBlZDVlVWhMZl8ybldSLVEtdDQwdFI3OXFicXcwSlNscWJIaXJmNkt3?oc=5">삼성증권 해킹 개인정보 유출 1만2천168명…피해 고객 3천927명 늘어</a><span class="m">국제뉴스 · 11/28 00:34 · 관련 보도 2곳</span></div></li>
+<li><input type="checkbox" class="pick" aria-label="공유할 기사 선택"><span class="ord"></span><span class="no">9</span><div><a href="https://news.google.com/rss/articles/CBMia0FVX3lxTFBxeVNtMmpmVDI5VFJzWGFsdHZMRHVpZGRkTmVvOUU3akNLYi0yaG9ETTVxZFBKNDl2Q0NhT2lTZDB4YnB5bkdUdTlvNVhoMHV4dWZSamEyNzNwaXdGWUlibTZGc1NrWVVSYS1z?oc=5">쿤텍·DNV, 선박 사이버보안·기능안전 통합 평가기술 공동 개발</a><span class="m">해사신문 · 11/27 22:39 · 관련 보도 2곳</span></div></li>
+<li><input type="checkbox" class="pick" aria-label="공유할 기사 선택"><span class="ord"></span><span class="no">10</span><div><a href="https://news.google.com/rss/articles/CBMicEFVX3lxTE1DNnl4Sms0U1JwZ0U0WFlWMkFmX0U2V1NldWhnby1obHJqajVhc1h4Qk1vRFc2b2NzQ3lkbUpBZzROdnlKWVV2ZjFKTko4bmNJRnBia3pQeUxhWUpSZ3BQbW9PcWtPekt4Q0NUWHh0VWLSAXRBVV95cUxNdVNLZzBrb3ZPZDJOeDBtWjViT0tWaXdCSE9CcTBEVEZlTHpJZXlSSXcwMGduTVI0UW5NbGRGQ0pQOHcxa3lZa2Y1WWpuYWhZdHJSS3Vub29vQ2JHWWtiUll3THFZZlY0Q3Z2cTlzYUVLYkRETw?oc=5">청주대 디지털보안학과, ‘2026 충북 정보보호 해커톤’ 최우수상 2개 수상</a><span class="m">이뉴스투데이 · 11/27 22:00 · 관련 보도 2곳</span></div></li>
+<li><input type="checkbox" class="pick" aria-label="공유할 기사 선택"><span class="ord"></span><span class="no">11</span><div><a href="https://news.google.com/rss/articles/CBMiaEFVX3lxTE5fSFRxSm5xd1RSOXhPemM5RWtZbEozbVJmYmRYR1ZPaWVDVlg2dmpRQ0hyemlQaU5Zcm9fX1F6dWtJNzJ1azZaNGhZbElKWnkwNWRzR1FuMEd5TlJoa2EzMW5VTmlQaTE3?oc=5">독일 SAP, 사이버 보안 사고 발생…AI 에이전트 침투 추정</a><span class="m">CBC뉴스 · 11/28 06:25</span></div></li>
+<li><input type="checkbox" class="pick" aria-label="공유할 기사 선택"><span class="ord"></span><span class="no">12</span><div><a href="https://news.google.com/rss/articles/CBMiakFVX3lxTE5DWm00aWtOa0xEa3MyalZhMHJEelhNcXJsaUM5UkVZQXk5M0ktRHZlZl81OHcwZHVTUDFxaDY0Nk4yb0puZWx0eFpJTDVYZW0xeUY2cFIzdnBYQ0RadC0xVW1YMnB0bDZ4Y2fSAW9BVV95cUxNcUZOLWI4MGFyeS01TVF3WkljZUlHeUV1eG0zcS1tQjNFamRYZkFEWnFFV0hlNW5UdmRmMVIzTU40QXBvVU5pRVhPcVRQXzgxRTl0d21FQnBhVWJGQnpHT2EtcHNfSmtvSFoxbWpLWEE?oc=5">정보 240만건 유출된 올리브영...&#x27;인증 밖&#x27; 시스템 뚫렸다</a><span class="m">머니투데이 · 11/28 06:10</span></div></li>
+<li><input type="checkbox" class="pick" aria-label="공유할 기사 선택"><span class="ord"></span><span class="no">13</span><div><a href="https://news.google.com/rss/articles/CBMiVkFVX3lxTE93dzRKVUNwSXFKSmdFNGpMNlFzLXdZWmFCcFMtdUthQUg2NGdOU3RrdzF5V3l1S0Q1QUoxYTl0NzBtQ19NUkd3ZXg2R3NhRTNMNjhZUnpR?oc=5">다나와 &quot;회원정보 일부 유출 확인&quot;…예스24 때와 판박이?</a><span class="m">지디넷코리아 · 11/28 05:10</span></div></li>
+<li><input type="checkbox" class="pick" aria-label="공유할 기사 선택"><span class="ord"></span><span class="no">14</span><div><a href="https://news.google.com/rss/articles/CBMiwgFBVV95cUxObzdxd2RZWlFpSjlkc19CXzNCc2Z2MWVseGJnSHo3MnZTVEJxRnRYQ2stTUZWQ0EzZUhUdWxjcUtBSkRJNnlHOUxvZW5YYUF2cDBhUmlUYXpQam5UTHNZU215NVpEa0xqczZtckZMY3hGaUlCc3dBVHM4ZjhtbV9LV3BmbnBjdlJYeHRXS1pMcWQ5RVRrMWctaWRVLTFweDVjQ212OXNMb0tuajRrZEpycHVpVzdfcFhWeE9MbzYzalkxZw?oc=5">제316사단(제2군관구)은 정보 보안 및 사이버 보안에 대한 장병들의 인식과 책임감을 고취시키고 있습니다.</a><span class="m">Vietnam.vn · 11/28 05:04</span></div></li>
+<li><input type="checkbox" class="pick" aria-label="공유할 기사 선택"><span class="ord"></span><span class="no">15</span><div><a href="https://news.google.com/rss/articles/CBMicEFVX3lxTFAtbFN2a3A5RXRwVGZRWGJiRmRIQWhrVWFMaXpHUmZCU0ZzNlpsbjR3eWg3NHN2QUVMR1daZGV6ZnljZTNDYS1ZbmpNcEVDdFhhNFNTYk5LY0pTc3RfeEdQaG5tZ0RJcDNiaUpfVzllVGLSAXRBVV95cUxQWnhvbTdaeFlzZXd4Z1lGZFRfemRRcWNRM2E5UFA5TUxyanJDVFZ3eUZDdGkyWDhpWGV5VlR5R0UzTmJWdzVCZFdDamgyanRYUEd0a09jNVBwX1FvS2NDMGJVRERkRkZzV3FBZzdCbFQ4bGdFMw?oc=5">디스코드 웹 개방에 개인정보 유출·범죄 우려 교차</a><span class="m">IT조선 · 11/28 05:00</span></div></li>
+<li><input type="checkbox" class="pick" aria-label="공유할 기사 선택"><span class="ord"></span><span class="no">16</span><div><a href="https://news.google.com/rss/articles/CBMikgFBVV95cUxPTzh1dnNWYVpvZzRaRWRZWlUwNURFbzdDSG9vOG1zbDNtTXBab1F6LWlhanlMaWNaWHdXTmlCekk4aHd4UnpiS0Q3VHRzR2JhTnV5Rm9xak5ia09tTEN3RkhiSy02SkdRN3piQlZjTmtYS1ZvRlY3ZUt3NXFVUGotUklEQVp6cVpoYU9STm9LNlduUQ?oc=5">인기 쇼핑 사이트에서 WebRTC를 이용한 신용카드 정보 탈취 스크립트 발견</a><span class="m">GeekNews · 11/28 04:35</span></div></li>
+<li><input type="checkbox" class="pick" aria-label="공유할 기사 선택"><span class="ord"></span><span class="no">17</span><div><a href="https://news.google.com/rss/articles/CBMiYEFVX3lxTFB6czdzSmhpQk1wM2hZMDdoS2FGODB6RFRleDhLYTV3Y015WGJ3d2R4eUVZVmhhWS1lazRTYS12OTNrc1hTWWxlbmxLUktsRU9Sb1dUMGR3S3dvXzlQSnNvQw?oc=5">임베디드 시스템 보안 강화… 악성 USB 및 오프라인 변조 공격 대응</a><span class="m">올포칩 · 11/28 03:59</span></div></li>
+<li><input type="checkbox" class="pick" aria-label="공유할 기사 선택"><span class="ord"></span><span class="no">18</span><div><a href="https://news.google.com/rss/articles/CBMiUEFVX3lxTFBHelFoSHZHd0xMVVhISklqMWU5VjA4VDRGZzB3X1pkcXJTRW93NV96SmZlMzJJNzZPbmtmQlhaTVoybFh2Z3lmcmxNVEpsc3g2?oc=5">창펑 자오 &quot;AI 발전으로 해킹 방어 갈수록 어려워져&quot;</a><span class="m">블루밍비트 · 11/28 03:58</span></div></li>
+<li><input type="checkbox" class="pick" aria-label="공유할 기사 선택"><span class="ord"></span><span class="no">19</span><div><a href="https://news.google.com/rss/articles/CBMiWkFVX3lxTE9aczJpY3d4UWw0b1h5RmRvV2g3ZlE1Vm9EWHAwNUVEVWxOQ1QwX3JxaGkwTTRoY0x1S1ZTejZQRVY1QVdySWMzSC12T3RqeTRFdjdBNDE2eHFNQQ?oc=5">미 공군도 해킹에 뚫려…&quot;민감 군사 정보 유출됐을 수도&quot;</a><span class="m">파이낸셜뉴스 · 11/28 03:48</span></div></li>
+<li><input type="checkbox" class="pick" aria-label="공유할 기사 선택"><span class="ord"></span><span class="no">20</span><div><a href="https://news.google.com/rss/articles/CBMiakFVX3lxTE1zYUwzV21EaWtycXhLT1dMZDlyRHRsQjF5V2lzbG1USjc2Y0pzRnZjUFlJSklDSzBtWWNtd016VTRlMW1tT3JmcEplTEc4RjRGZU5uUW92dXlGU1AyZWkwMXpWaHBBZHV5eUE?oc=5">한국인터넷진흥원(KISA), &#x27;정보보호 해외 진출 전략 거점 성과 발표회&#x27; 개최</a><span class="m">컨슈머타임스 · 11/28 03:09</span></div></li>
+<li><input type="checkbox" class="pick" aria-label="공유할 기사 선택"><span class="ord"></span><span class="no">21</span><div><a href="https://news.google.com/rss/articles/CBMiYEFVX3lxTE1XaWVlMU54Smx3Q1BPdjlGWjFoMm5nTnd2UmdDems0bGE1WTFCVDg3Vkp1bmgxeUhiOTZJRHVCSG1IMFVRNTkyemZRVG9pai02d2JPa2Q4VkdYWURwbk1oX9IBeEFVX3lxTE9JeTdFOS1pejFoQ1RjSE5mNk9YUUhLYzF3VFJER2tWUXd3c2RFZl94YXgtRmU3bkNnMG1IU3lCNU9LNFYwRV80S0lQTTI4Q05RVThoOEhZZGYtU0hrQWdUWHJqeXUxZWd3ajgtZV82dGQteFpUaFJYZg?oc=5">美공군까지 뚫렸다…이번엔 군사 기밀 대량 유출 우려</a><span class="m">뉴시스 · 11/28 02:21</span></div></li>
+<li><input type="checkbox" class="pick" aria-label="공유할 기사 선택"><span class="ord"></span><span class="no">22</span><div><a href="https://news.google.com/rss/articles/CBMirAJBVV95cUxNRkRMTW9rVGJ6ZHExOGFfZmF3U3dVY1YzdV9NVTY2YU5RaU5MVkR2X0JiTmZjT1pFanIxeUJvLUZLTWQxS1VvaHU3WnlCX2hsTFFTeG9ucVBqaWh4MlZNRURSQW5IZUdvamJWQmdwcnFnMlRwZG4zLXlBMGZ6ZUdKTmJxN0ROa1pDUE84NElFWEVmcEg4bHZMSGd4VjlzWWVJblJ4MTRFLW95VVdhOWJwUzN6OUZBakxrclZWOHlheGpGQVpNODdtMUhleGJwX2R2SWRieXU1cTBnSkNNUVlIYzhwQWdoUXV4QnVDc2ZFaHBtWWUwQVB6OHhNU013UEhIYk90aWhaXzg3VGpreTY5Wi02N1JoUFdEZGtnOGE0MlFEdTc3SGVqTFprQlU?oc=5">美 CIA·국가정보국 해킹 피해…정보당국 보안우려 고조</a><span class="m">Korean Journal Houston · 11/28 02:12</span></div></li>
+<li><input type="checkbox" class="pick" aria-label="공유할 기사 선택"><span class="ord"></span><span class="no">23</span><div><a href="https://news.google.com/rss/articles/CBMiakFVX3lxTE1jckxEZ0tpVWdCRlJEeXE3dzZ6S29rQm5lNlNoanJtVDFnMW8wVWxsRE1iUXdNSURjdXJWYnBqRFlnMXVZZ3UzVWZPVzFoZ21yaFZKOGVFc1lKRk4zYVlvcElrdkRpaFQwa0E?oc=5">에버스핀, 자바 치명적 취약점 ‘Java4Shell’, 에버세이프 웹으로 차단 검증</a><span class="m">뉴스에이 · 11/28 02:12</span></div></li>
+<li><input type="checkbox" class="pick" aria-label="공유할 기사 선택"><span class="ord"></span><span class="no">24</span><div><a href="https://news.google.com/rss/articles/CBMiZ0FVX3lxTE15Zm1vNEZ4bk50ajYzT29od0ZKM0RzMHVOZnNWaU9OZ0hmTkFuX1ZvZE5wWmdldmRpaVlpcUROcEVHbmlnNFVRTkhyVWV1VC03R3BkUnprMmQ5R0dSMUNaWk5IWTZwOFk?oc=5">FIFA는 사이버 공격을 받았다고 확인했습니다.</a><span class="m">Vietnam.vn · 11/28 02:11</span></div></li>
+<li><input type="checkbox" class="pick" aria-label="공유할 기사 선택"><span class="ord"></span><span class="no">25</span><div><a href="https://news.google.com/rss/articles/CBMiVkFVX3lxTE1ocUFlZkk2MHliakQtVHEtTTNtV0ViQjlSSzZuUmFmeHlSZVpXMmFoM3dZcmNIYXh4UXRfa1hEYTdnYzlZWnNORW01S3dRdTZyaGoycGJn?oc=5">美공군 핵심 시스템 해킹 피해…전투 탄약 정보 등 탈취 우려</a><span class="m">중앙일보 · 11/28 01:48</span></div></li>
+<li><input type="checkbox" class="pick" aria-label="공유할 기사 선택"><span class="ord"></span><span class="no">26</span><div><a href="https://news.google.com/rss/articles/CBMijwFBVV95cUxNQnFMQm1EVUxKMHowNV95c24zOGU3UWViUWZpQkxCRHBHUEMtWnc4WmhzbmtraG5IcDVqbG1YQUQ5dHRXaFJuMlNsQjdTVkdzSlZ4N21DSzFSNXZSVGNxY3VDbm1sMHYwNWJNUUJ5ek4zNFphVjBPMllHd0hrcm9LTEYtajQ4b2c2bDZHajBoZ9IBkgFBVV95cUxNMjhGMF9GXzh6MTNBQjNtZlBYNDhjdDhqM1ZQSzRuQ1h1RURYVUs4MzkxTFA4ZmFyeENoX3l5M3JsYVU5MW5xeUtsUEJ1bGZtaXl6TUZyTU9ySXgzaU5TRDRESThST0QxQVRab09DbHRhY1pJaGlfeUVYa2NiSHRjSGhrVk5QRmFkQjdZS2oyb01Mdw?oc=5">아부다비 법원, 북한 바이낸스 해킹 자산 보전 명령서 “충돌 땐 미국 명령 우선”</a><span class="m">VOA 한국어 홈페이지 · 11/28 01:29</span></div></li>
+<li><input type="checkbox" class="pick" aria-label="공유할 기사 선택"><span class="ord"></span><span class="no">27</span><div><a href="https://news.google.com/rss/articles/CBMiYkFVX3lxTE9nM2Z1X2pLNjJVZDc1M205QVNIS0w0NGtESlZnMURidFlrQ0J5dGRoOVM1dUF6M0FmeHdMclB5a0tidWx4OTBaMURQTUhONjZ4OFE0aldxRXFtSmp0M1p3NVVn?oc=5">개인정보위, 한전 개인정보 유출사고 조사 착수</a><span class="m">서울Pn · 11/28 01:28</span></div></li>
+<li><input type="checkbox" class="pick" aria-label="공유할 기사 선택"><span class="ord"></span><span class="no">28</span><div><a href="https://news.google.com/rss/articles/CBMiSkFVX3lxTE9lVUtMcUY4Y0FyaGRJQjRjOXc1N3JYSlVhOEkxam5ja2JPRUJGYWYzOFB4QmY5V3RkbHVBNFZSczhZT2dpSGI2Ry13?oc=5">데이터 규제, 기업 전략을 흔들다: 2026년 10월 글로벌 개인정보 보호 동향과 한국 기업의 과제</a><span class="m">뉴스N연합 · 11/28 01:18</span></div></li>
+<li><input type="checkbox" class="pick" aria-label="공유할 기사 선택"><span class="ord"></span><span class="no">29</span><div><a href="https://news.google.com/rss/articles/CBMiVkFVX3lxTE9xNU5rQnJtZ3VFd1dkNU9lZzJRRkhkQ2RvZ2NhZU1PekVsLUlmWkdacVdIRWVGSWpMb0dZd0dTRXNjd3FfVkpqVDdaQkdscktKM2tGbDJR?oc=5">대표번호 찍힌 ‘거래소 보안점검’ 전화, 3단계로 악성앱 설치시켜 출금까지 노린다</a><span class="m">위키트리 · 11/28 01:01</span></div></li>
+<li><input type="checkbox" class="pick" aria-label="공유할 기사 선택"><span class="ord"></span><span class="no">30</span><div><a href="https://news.google.com/rss/articles/CBMickFVX3lxTE9sakZDT2tXNkM1Y2xYQUNUNi1ObldqMDJCWjhFMDd3ZTJveHZVMTE4cTlvYW11R1hhSUEtU1dyUEktUjZ6elh4a0dxaXY4RlpoV250dXpzSHNlc0xESmpVbm1uQVJTS0ZmOWRTejNWSEtfQQ?oc=5">[입법예고] AI 개발에 개인정보 쓰려면…개인정보위 심의·의결 거쳐야</a><span class="m">아웃소싱타임스 · 11/28 00:45</span></div></li></ol></main><div class="bar"><span></span><button type="button" class="add">기사 추가하기</button><button type="button" class="share">카톡으로 공유</button></div><div class="dlg" hidden><div><h2>기사 추가하기</h2><p>번호·제목·주소가 담긴 목록을 그대로 붙여 넣으세요. 오늘 날짜로 저장됩니다.</p><textarea placeholder="1. 「기사 제목」 (출처)&#10;https://…"></textarea><input type="password" class="pw" placeholder="비밀번호 (처음 한 번만)" hidden><div class="msg"></div><div class="row"><button type="button" class="cancel">취소</button><button type="button" class="ok">추가</button></div></div></div><script id="data" type="application/json">{"key": "21f44df8d6801a2d7fce33c753dca716", "date": "2026-11-28(토)", "day": "2026-11-28", "store": "https://script.google.com/macros/s/AKfycbx797NCgxH_P_3AU5XpMKllObJx4db21gNZlutz0j0lQjiqFFlixKfTGtDjyrf0srAIdQ/exec", "title": "🔐 정보보안 브리핑 11/28(토)", "items": [{"t": "인터넷우체국 해킹에 개인정보 유출… 하루치만 11만명 넘어", "u": "https://news.google.com/rss/articles/CBMiakFVX3lxTE53VlkxSUxLTGl5RTFYem5iOWtudk1GX29URUFiR080UVNaelJzNGFNazhNaldhU1FsRFVtZjhOdV9oYjV4a0JKOVlpR2ZTeU5rempFcnY2VEhlTndWR2pRd1JGN19wY3JvRHc?oc=5", "s": "천지일보 · 관련 10곳"}, {"t": "미 공군 핵심 클라우드 '클라우드 원' 해킹 피해", "u": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE1vMDVaMDY5c2JfTzR2YXh5QTl6S2VHVEFjcU5fWDJiM3VWaW9mb3dpRWRKN3RZNGk5TlM3SkQ3d0d0ZmJyV0FsZE1yWUoxbjBGTFNXQkZR?oc=5", "s": "지디넷코리아 · 관련 8곳"}, {"t": "이나인페이, 해킹으로 25억원 피해…금감원 현장점검 돌입", "u": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE0wTFZUVDZuUWx4SFcwM0QtaWdaWENDNEc2WHRXeEI5SVVpa3hzRmJ3Y3VJcHhGbDlrNlpQR2hyRWVsRDhDWTJWelpqclNKWGNhRHVmSEx3?oc=5", "s": "헤럴드경제 · 관련 7곳"}, {"t": "개인정보 유출신고 10월까지 1019건…긴급 대응체계 가동", "u": "https://news.google.com/rss/articles/CBMiSEFVX3lxTE9ia2hxMkVHTEJPTjBIb0RnM0lFRWItNmV6dm12aElmSkY5bXI5S2NQUWJFSm9MSFJ2YlF1ZHp2MHNhNmFnXzg1Ng?oc=5", "s": "코리안투데이 · 관련 5곳"}, {"t": "유럽 최대 SW업체 SAP 해킹 의혹...AI 동원 가능성", "u": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE1yOTh6SFhWX3YwTHh0YjQ5bDlGS0Jtc1NSYUMzcWYxeC1sbEtkWTlDMEQtSS1JbjkxZXQyQ1FrbWFkcTlidEdTaWFvTWVNdFFheVZMbll3Rkxqb2FZMnp5OVZ5VTk?oc=5", "s": "라디오코리아 · 관련 3곳"}, {"t": "2026년 국내 랜섬웨어 86건, 전년 두 배…기업 보안 예산의 무게가 달라졌다", "u": "https://news.google.com/rss/articles/CBMiSkFVX3lxTE9RRjR3VXE1Qm9rQTdndkhFcGlnLW5BekFVSHJSQmV1Z3NjVy1hSEgyS3JhWTZxVzZhM3lpRzRKMmpJVzczWDZvaW5B?oc=5", "s": "뉴스N연합 · 관련 2곳"}, {"t": "미 공군 핵심 시스템도 해킹에 뚫렸다... \"민감 전술 유출 가능성\"", "u": "https://news.google.com/rss/articles/CBMibkFVX3lxTE55V3lRNE1Da1BDcWFqT2oza091UWc5MXZMc1hZUW5LdnRneUFpWnluNFhlakJXbUs2djR4dG41UUtMcXpwVE9HNk5UODdkSUUwVmFjREV5LUd0S3BlYnNraTdldXpjZXd1dHN4QWFn0gFzQVVfeXFMTVBaaDQ5T2lYaUpHd0hycWM3NHNNZmhNMUtTOXdWdTlqVzhDbzdVemhJLUZ3SlRmQ1hLVmJHRWp0cENXdmRlSHU4VWNNWS1pVTh3RlVTT18tUHVnM2hkYi1TSUcwY1k3QlpMSVlWWlh5UFZUYw?oc=5", "s": "한국일보 · 관련 2곳"}, {"t": "삼성증권 해킹 개인정보 유출 1만2천168명…피해 고객 3천927명 늘어", "u": "https://news.google.com/rss/articles/CBMibkFVX3lxTFBrd2JzOFA5d29vY1MxTnpObkkxYV9TLU5lMFJzUDEyMTV3WHloVy12Zkt2ajNkU3pzRl9CdkY4NFBXSGRvTlBlZDVlVWhMZl8ybldSLVEtdDQwdFI3OXFicXcwSlNscWJIaXJmNkt3?oc=5", "s": "국제뉴스 · 관련 2곳"}, {"t": "쿤텍·DNV, 선박 사이버보안·기능안전 통합 평가기술 공동 개발", "u": "https://news.google.com/rss/articles/CBMia0FVX3lxTFBxeVNtMmpmVDI5VFJzWGFsdHZMRHVpZGRkTmVvOUU3akNLYi0yaG9ETTVxZFBKNDl2Q0NhT2lTZDB4YnB5bkdUdTlvNVhoMHV4dWZSamEyNzNwaXdGWUlibTZGc1NrWVVSYS1z?oc=5", "s": "해사신문 · 관련 2곳"}, {"t": "청주대 디지털보안학과, ‘2026 충북 정보보호 해커톤’ 최우수상 2개 수상", "u": "https://news.google.com/rss/articles/CBMicEFVX3lxTE1DNnl4Sms0U1JwZ0U0WFlWMkFmX0U2V1NldWhnby1obHJqajVhc1h4Qk1vRFc2b2NzQ3lkbUpBZzROdnlKWVV2ZjFKTko4bmNJRnBia3pQeUxhWUpSZ3BQbW9PcWtPekt4Q0NUWHh0VWLSAXRBVV95cUxNdVNLZzBrb3ZPZDJOeDBtWjViT0tWaXdCSE9CcTBEVEZlTHpJZXlSSXcwMGduTVI0UW5NbGRGQ0pQOHcxa3lZa2Y1WWpuYWhZdHJSS3Vub29vQ2JHWWtiUll3THFZZlY0Q3Z2cTlzYUVLYkRETw?oc=5", "s": "이뉴스투데이 · 관련 2곳"}, {"t": "독일 SAP, 사이버 보안 사고 발생…AI 에이전트 침투 추정", "u": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE5fSFRxSm5xd1RSOXhPemM5RWtZbEozbVJmYmRYR1ZPaWVDVlg2dmpRQ0hyemlQaU5Zcm9fX1F6dWtJNzJ1azZaNGhZbElKWnkwNWRzR1FuMEd5TlJoa2EzMW5VTmlQaTE3?oc=5", "s": "CBC뉴스"}, {"t": "정보 240만건 유출된 올리브영...'인증 밖' 시스템 뚫렸다", "u": "https://news.google.com/rss/articles/CBMiakFVX3lxTE5DWm00aWtOa0xEa3MyalZhMHJEelhNcXJsaUM5UkVZQXk5M0ktRHZlZl81OHcwZHVTUDFxaDY0Nk4yb0puZWx0eFpJTDVYZW0xeUY2cFIzdnBYQ0RadC0xVW1YMnB0bDZ4Y2fSAW9BVV95cUxNcUZOLWI4MGFyeS01TVF3WkljZUlHeUV1eG0zcS1tQjNFamRYZkFEWnFFV0hlNW5UdmRmMVIzTU40QXBvVU5pRVhPcVRQXzgxRTl0d21FQnBhVWJGQnpHT2EtcHNfSmtvSFoxbWpLWEE?oc=5", "s": "머니투데이"}, {"t": "다나와 \"회원정보 일부 유출 확인\"…예스24 때와 판박이?", "u": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE93dzRKVUNwSXFKSmdFNGpMNlFzLXdZWmFCcFMtdUthQUg2NGdOU3RrdzF5V3l1S0Q1QUoxYTl0NzBtQ19NUkd3ZXg2R3NhRTNMNjhZUnpR?oc=5", "s": "지디넷코리아"}, {"t": "제316사단(제2군관구)은 정보 보안 및 사이버 보안에 대한 장병들의 인식과 책임감을 고취시키고 있습니다.", "u": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxObzdxd2RZWlFpSjlkc19CXzNCc2Z2MWVseGJnSHo3MnZTVEJxRnRYQ2stTUZWQ0EzZUhUdWxjcUtBSkRJNnlHOUxvZW5YYUF2cDBhUmlUYXpQam5UTHNZU215NVpEa0xqczZtckZMY3hGaUlCc3dBVHM4ZjhtbV9LV3BmbnBjdlJYeHRXS1pMcWQ5RVRrMWctaWRVLTFweDVjQ212OXNMb0tuajRrZEpycHVpVzdfcFhWeE9MbzYzalkxZw?oc=5", "s": "Vietnam.vn"}, {"t": "디스코드 웹 개방에 개인정보 유출·범죄 우려 교차", "u": "https://news.google.com/rss/articles/CBMicEFVX3lxTFAtbFN2a3A5RXRwVGZRWGJiRmRIQWhrVWFMaXpHUmZCU0ZzNlpsbjR3eWg3NHN2QUVMR1daZGV6ZnljZTNDYS1ZbmpNcEVDdFhhNFNTYk5LY0pTc3RfeEdQaG5tZ0RJcDNiaUpfVzllVGLSAXRBVV95cUxQWnhvbTdaeFlzZXd4Z1lGZFRfemRRcWNRM2E5UFA5TUxyanJDVFZ3eUZDdGkyWDhpWGV5VlR5R0UzTmJWdzVCZFdDamgyanRYUEd0a09jNVBwX1FvS2NDMGJVRERkRkZzV3FBZzdCbFQ4bGdFMw?oc=5", "s": "IT조선"}, {"t": "인기 쇼핑 사이트에서 WebRTC를 이용한 신용카드 정보 탈취 스크립트 발견", "u": "https://news.google.com/rss/articles/CBMikgFBVV95cUxPTzh1dnNWYVpvZzRaRWRZWlUwNURFbzdDSG9vOG1zbDNtTXBab1F6LWlhanlMaWNaWHdXTmlCekk4aHd4UnpiS0Q3VHRzR2JhTnV5Rm9xak5ia09tTEN3RkhiSy02SkdRN3piQlZjTmtYS1ZvRlY3ZUt3NXFVUGotUklEQVp6cVpoYU9STm9LNlduUQ?oc=5", "s": "GeekNews"}, {"t": "임베디드 시스템 보안 강화… 악성 USB 및 오프라인 변조 공격 대응", "u": "https://news.google.com/rss/articles/CBMiYEFVX3lxTFB6czdzSmhpQk1wM2hZMDdoS2FGODB6RFRleDhLYTV3Y015WGJ3d2R4eUVZVmhhWS1lazRTYS12OTNrc1hTWWxlbmxLUktsRU9Sb1dUMGR3S3dvXzlQSnNvQw?oc=5", "s": "올포칩"}, {"t": "창펑 자오 \"AI 발전으로 해킹 방어 갈수록 어려워져\"", "u": "https://news.google.com/rss/articles/CBMiUEFVX3lxTFBHelFoSHZHd0xMVVhISklqMWU5VjA4VDRGZzB3X1pkcXJTRW93NV96SmZlMzJJNzZPbmtmQlhaTVoybFh2Z3lmcmxNVEpsc3g2?oc=5", "s": "블루밍비트"}, {"t": "미 공군도 해킹에 뚫려…\"민감 군사 정보 유출됐을 수도\"", "u": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE9aczJpY3d4UWw0b1h5RmRvV2g3ZlE1Vm9EWHAwNUVEVWxOQ1QwX3JxaGkwTTRoY0x1S1ZTejZQRVY1QVdySWMzSC12T3RqeTRFdjdBNDE2eHFNQQ?oc=5", "s": "파이낸셜뉴스"}, {"t": "한국인터넷진흥원(KISA), '정보보호 해외 진출 전략 거점 성과 발표회' 개최", "u": "https://news.google.com/rss/articles/CBMiakFVX3lxTE1zYUwzV21EaWtycXhLT1dMZDlyRHRsQjF5V2lzbG1USjc2Y0pzRnZjUFlJSklDSzBtWWNtd016VTRlMW1tT3JmcEplTEc4RjRGZU5uUW92dXlGU1AyZWkwMXpWaHBBZHV5eUE?oc=5", "s": "컨슈머타임스"}, {"t": "美공군까지 뚫렸다…이번엔 군사 기밀 대량 유출 우려", "u": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE1XaWVlMU54Smx3Q1BPdjlGWjFoMm5nTnd2UmdDems0bGE1WTFCVDg3Vkp1bmgxeUhiOTZJRHVCSG1IMFVRNTkyemZRVG9pai02d2JPa2Q4VkdYWURwbk1oX9IBeEFVX3lxTE9JeTdFOS1pejFoQ1RjSE5mNk9YUUhLYzF3VFJER2tWUXd3c2RFZl94YXgtRmU3bkNnMG1IU3lCNU9LNFYwRV80S0lQTTI4Q05RVThoOEhZZGYtU0hrQWdUWHJqeXUxZWd3ajgtZV82dGQteFpUaFJYZg?oc=5", "s": "뉴시스"}, {"t": "美 CIA·국가정보국 해킹 피해…정보당국 보안우려 고조", "u": "https://news.google.com/rss/articles/CBMirAJBVV95cUxNRkRMTW9rVGJ6ZHExOGFfZmF3U3dVY1YzdV9NVTY2YU5RaU5MVkR2X0JiTmZjT1pFanIxeUJvLUZLTWQxS1VvaHU3WnlCX2hsTFFTeG9ucVBqaWh4MlZNRURSQW5IZUdvamJWQmdwcnFnMlRwZG4zLXlBMGZ6ZUdKTmJxN0ROa1pDUE84NElFWEVmcEg4bHZMSGd4VjlzWWVJblJ4MTRFLW95VVdhOWJwUzN6OUZBakxrclZWOHlheGpGQVpNODdtMUhleGJwX2R2SWRieXU1cTBnSkNNUVlIYzhwQWdoUXV4QnVDc2ZFaHBtWWUwQVB6OHhNU013UEhIYk90aWhaXzg3VGpreTY5Wi02N1JoUFdEZGtnOGE0MlFEdTc3SGVqTFprQlU?oc=5", "s": "Korean Journal Houston"}, {"t": "에버스핀, 자바 치명적 취약점 ‘Java4Shell’, 에버세이프 웹으로 차단 검증", "u": "https://news.google.com/rss/articles/CBMiakFVX3lxTE1jckxEZ0tpVWdCRlJEeXE3dzZ6S29rQm5lNlNoanJtVDFnMW8wVWxsRE1iUXdNSURjdXJWYnBqRFlnMXVZZ3UzVWZPVzFoZ21yaFZKOGVFc1lKRk4zYVlvcElrdkRpaFQwa0E?oc=5", "s": "뉴스에이"}, {"t": "FIFA는 사이버 공격을 받았다고 확인했습니다.", "u": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE15Zm1vNEZ4bk50ajYzT29od0ZKM0RzMHVOZnNWaU9OZ0hmTkFuX1ZvZE5wWmdldmRpaVlpcUROcEVHbmlnNFVRTkhyVWV1VC03R3BkUnprMmQ5R0dSMUNaWk5IWTZwOFk?oc=5", "s": "Vietnam.vn"}, {"t": "美공군 핵심 시스템 해킹 피해…전투 탄약 정보 등 탈취 우려", "u": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE1ocUFlZkk2MHliakQtVHEtTTNtV0ViQjlSSzZuUmFmeHlSZVpXMmFoM3dZcmNIYXh4UXRfa1hEYTdnYzlZWnNORW01S3dRdTZyaGoycGJn?oc=5", "s": "중앙일보"}, {"t": "아부다비 법원, 북한 바이낸스 해킹 자산 보전 명령서 “충돌 땐 미국 명령 우선”", "u": "https://news.google.com/rss/articles/CBMijwFBVV95cUxNQnFMQm1EVUxKMHowNV95c24zOGU3UWViUWZpQkxCRHBHUEMtWnc4WmhzbmtraG5IcDVqbG1YQUQ5dHRXaFJuMlNsQjdTVkdzSlZ4N21DSzFSNXZSVGNxY3VDbm1sMHYwNWJNUUJ5ek4zNFphVjBPMllHd0hrcm9LTEYtajQ4b2c2bDZHajBoZ9IBkgFBVV95cUxNMjhGMF9GXzh6MTNBQjNtZlBYNDhjdDhqM1ZQSzRuQ1h1RURYVUs4MzkxTFA4ZmFyeENoX3l5M3JsYVU5MW5xeUtsUEJ1bGZtaXl6TUZyTU9ySXgzaU5TRDRESThST0QxQVRab09DbHRhY1pJaGlfeUVYa2NiSHRjSGhrVk5QRmFkQjdZS2oyb01Mdw?oc=5", "s": "VOA 한국어 홈페이지"}, {"t": "개인정보위, 한전 개인정보 유출사고 조사 착수", "u": "https://news.google.com/rss/articles/CBMiYkFVX3lxTE9nM2Z1X2pLNjJVZDc1M205QVNIS0w0NGtESlZnMURidFlrQ0J5dGRoOVM1dUF6M0FmeHdMclB5a0tidWx4OTBaMURQTUhONjZ4OFE0aldxRXFtSmp0M1p3NVVn?oc=5", "s": "서울Pn"}, {"t": "데이터 규제, 기업 전략을 흔들다: 2026년 10월 글로벌 개인정보 보호 동향과 한국 기업의 과제", "u": "https://news.google.com/rss/articles/CBMiSkFVX3lxTE9lVUtMcUY4Y0FyaGRJQjRjOXc1N3JYSlVhOEkxam5ja2JPRUJGYWYzOFB4QmY5V3RkbHVBNFZSczhZT2dpSGI2Ry13?oc=5", "s": "뉴스N연합"}, {"t": "대표번호 찍힌 ‘거래소 보안점검’ 전화, 3단계로 악성앱 설치시켜 출금까지 노린다", "u": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE9xNU5rQnJtZ3VFd1dkNU9lZzJRRkhkQ2RvZ2NhZU1PekVsLUlmWkdacVdIRWVGSWpMb0dZd0dTRXNjd3FfVkpqVDdaQkdscktKM2tGbDJR?oc=5", "s": "위키트리"}, {"t": "[입법예고] AI 개발에 개인정보 쓰려면…개인정보위 심의·의결 거쳐야", "u": "https://news.google.com/rss/articles/CBMickFVX3lxTE9sakZDT2tXNkM1Y2xYQUNUNi1ObldqMDJCWjhFMDd3ZTJveHZVMTE4cTlvYW11R1hhSUEtU1dyUEktUjZ6elh4a0dxaXY4RlpoV250dXpzSHNlc0xESmpVbm1uQVJTS0ZmOWRTejNWSEtfQQ?oc=5", "s": "아웃소싱타임스"}]}</script><script src="https://t1.kakaocdn.net/kakao_js_sdk/2.7.6/kakao.min.js" crossorigin="anonymous" async></script><script>
+const D = JSON.parse(document.getElementById('data').textContent);
+const ol = document.querySelector('ol'), N = D.items.length;
+const DAY = D.day || D.date.slice(0, 10), STORE = D.store || '';  // STORE: 구글 시트 Apps Script 웹 앱 주소 (없으면 이 기기에만 저장)
+const params = new URLSearchParams(location.search), pick = params.get('pick');
+// 카톡 메시지의 기사 링크는 이 페이지를 거쳐 원문으로 보낸다 — 카카오는 앱에 등록되지 않은 도메인 링크를
+// 등록 도메인 첫 화면으로 바꿔 버리기 때문 (?go=번호 는 오늘 목록의 기사, ?u=주소 는 직접 추가한 기사)
+const goTo = params.has('go') ? (D.items[+params.get('go')] || {}).u : params.get('u');
+if (goTo && /^https?:\/\//.test(goTo)) { document.documentElement.style.display = 'none'; location.replace(goTo); }
+const esc = s => String(s).replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+const host = u => { try { return new URL(u).hostname.replace(/^www\./, ''); } catch (e) { return ''; } };
+const ls = { get: (k, d) => { try { const v = localStorage.getItem(k); return v === null ? d : JSON.parse(v); } catch (e) { return d; } },
+  set: (k, v) => { try { v === null ? localStorage.removeItem(k) : localStorage.setItem(k, JSON.stringify(v)); } catch (e) {} } };
+const LOCAL = 'added:' + D.date, PW = 'store-key';
+// 고르던 기사 — 기사를 열어 보고 돌아와도(페이지가 새로 열려도) 체크가 남게 이 기기에 저장. 같은 날·같은 목록일 때만 되살린다
+const SEL = 'sel:' + DAY, SIG = N + '|' + (D.items[0] || {}).u;
+const b64u = buf => btoa(String.fromCharCode(...buf)).replace(/\+/g, '-').replace(/\//g, '_').replace(/=+$/, '');
+const unb64u = s => Uint8Array.from(atob(s.replace(/-/g, '+').replace(/_/g, '/')), c => c.charCodeAt(0));
+const pipe = (data, tr) => new Response(new Blob([data]).stream().pipeThrough(tr));
+const deflate = async s => b64u(new Uint8Array(await pipe(s, new CompressionStream('deflate-raw')).arrayBuffer()));
+const inflate = s => pipe(unb64u(s), new DecompressionStream('deflate-raw')).text();
+// 카카오 메시지 크기 제한 — 실측: 템플릿 JSON이 UTF-8로 약 3,600바이트를 넘으면 거절된다 (통과 최대 3,578 / 거절 최소 3,743)
+const MAX_MSG = 3600;
+
+// 저장소: 구글 시트(Apps Script). GET ?date= 로 그날 추가 기사, POST {key,date,items|del} 로 추가·삭제
+const api = async body => {
+  const r = await fetch(body ? STORE : STORE + '?date=' + DAY, body
+    ? { method: 'POST', headers: { 'Content-Type': 'text/plain;charset=utf-8' }, body: JSON.stringify({ ...body, date: DAY }) } : {});
+  const j = await r.json();
+  if (!j.ok) throw new Error(j.error || 'error');
+  return j.items.map(a => ({ id: String(a.id), t: a.t, u: a.u, s: a.s || host(a.u) }));
+};
+
+// 직접 추가한 기사 — 저장소가 있으면 구글 시트, 없으면 이 기기 브라우저(날짜별)에 저장. 각 기사는 고유 id를 가진다
+let extra = [];
+const items = () => D.items.concat(extra);
+const keyOf = i => i < N ? String(i) : 'x' + extra[i - N].id;  // 고른 기사 표시: 오늘 목록은 번호, 추가 기사는 x+id
+const lis = () => [...ol.children];
+const renumber = () => lis().forEach((li, i) => { li.querySelector('.no').textContent = i + 1; });
+const renderExtra = (list, removable) => {
+  extra = list.filter((a, i) => list.findIndex(x => x.u === a.u) === i);  // 같은 주소는 하나만
+  ol.querySelectorAll('li.added').forEach(li => li.remove());
+  extra.forEach(a => {
+    const li = document.createElement('li'); li.className = 'added';
+    li.innerHTML = '<input type="checkbox" class="pick" aria-label="공유할 기사 선택"><span class="ord"></span><span class="no"></span><div>'
+      + '<a href="' + esc(a.u) + '">' + esc(a.t) + '</a><span class="m">' + esc(a.s || host(a.u)) + ' · 직접 추가</span></div>'
+      + (removable ? '<button type="button" class="del" aria-label="추가한 기사 지우기">✕</button>' : '');
+    ol.appendChild(li);
+  });
+  renumber();
+};
+
+const showPicked = async () => {  // 공유받은 사람이 보는 화면: 고른 기사만, 고른 순서대로
+  const toks = pick.split(',');
+  let list = [];
+  try {
+    if (toks.some(t => t[0] === 'x') && STORE) list = await api();         // 추가 기사는 구글 시트에서
+    else if (params.get('z') || params.get('add')) {                       // 저장소 이전의 옛 링크: 주소에 실려 온 기사
+      const raw = params.get('z') ? await inflate(params.get('z')) : new TextDecoder().decode(unb64u(params.get('add')));
+      list = JSON.parse(raw).map(([t, u, s, id], k) => ({ id: id || 'z' + k, t, u, s: s || host(u) }));
+    }
+  } catch (e) { list = []; }
+  renderExtra(list, false);
+  const all = lis(), byTok = {};
+  all.forEach((li, i) => { byTok[keyOf(i)] = li; });
+  list.forEach((a, k) => { byTok[String(N + k)] = byTok['x' + a.id]; });  // 옛 링크는 추가 기사를 N+순번으로 가리킨다
+  document.body.classList.add('view');
+  all.forEach(li => li.remove());
+  toks.forEach(t => byTok[t] && ol.appendChild(byTok[t]));
+  renumber();
+  document.querySelector('h1').textContent = '🔐 정보보안 브리핑';
+  document.querySelector('header p').textContent = D.date;
+  document.documentElement.classList.remove('picking');
+};
+
+const btn = document.querySelector('.bar .share'), cnt = document.querySelector('.bar span');
+let sel = [];  // 고른 순서(기사 표시 키) — 빼면 뒤의 것들이 당겨지고, 새로 고른 건 맨 뒤
+if (!pick) { const saved = ls.get(SEL, null); if (saved && saved.sig === SIG) sel = saved.sel; }
+let ready = !STORE;  // 추가 기사를 불러오기 전엔 저장된 x… 표시를 지우지 않는다
+const sync = () => {
+  const keys = lis().map((li, i) => keyOf(i));
+  if (ready) sel = sel.filter(k => keys.includes(k));
+  lis().forEach((li, i) => {
+    const k = sel.indexOf(keys[i]);
+    li.classList.toggle('on', k >= 0);
+    li.querySelector('.pick').checked = k >= 0;
+    li.querySelector('.ord').textContent = k >= 0 ? k + 1 : '';
+  });
+  cnt.textContent = sel.length + '개 선택'; btn.disabled = !sel.length;
+  if (!pick) ls.set(SEL, { sig: SIG, sel });
+  buildLink();
+};
+const idxOf = k => k[0] === 'x' ? N + extra.findIndex(a => 'x' + a.id === k) : +k;
+// 공유 링크는 고를 때마다 미리 만들어 둔다 (압축이 비동기라 버튼을 누른 순간에 만들면 카톡 전환이 막힐 수 있다)
+// 저장소가 있으면 링크엔 표시 키만 — 몇 개를 골라도 짧다. 없으면 추가 기사 내용을 압축해 z= 에 싣는다
+let link = null, linkSeq = 0;
+const buildLink = async () => {
+  const seq = ++linkSeq, ex = sel.filter(k => k[0] === 'x').map(k => extra[idxOf(k) - N]);
+  let page = location.origin + location.pathname + '?pick=' + sel.join(',');  // 쉼표는 그대로 — 링크가 짧을수록 좋다
+  link = null;
+  if (ex.length && !STORE) page += '&z=' + await deflate(JSON.stringify(ex.map(a => [a.t, a.u, a.s, a.id])));
+  if (seq === linkSeq) link = { page, extra: ex.length };
+};
+ol.addEventListener('change', e => {
+  if (!e.target.classList.contains('pick')) return;
+  const k = keyOf(lis().indexOf(e.target.closest('li')));
+  sel = sel.filter(x => x !== k);
+  if (e.target.checked) sel.push(k);
+  sync();
+});
+ol.addEventListener('click', async e => {
+  if (!e.target.classList.contains('del')) return;
+  const a = extra[lis().indexOf(e.target.closest('li')) - N];
+  if (STORE) {
+    e.target.disabled = true;
+    try { renderExtra(await api({ key: ls.get(PW, ''), del: a.id }), true); }
+    catch (x) { e.target.disabled = false; return alert(x.message === 'password' ? '비밀번호가 맞지 않아 지우지 못했어요' : '지우지 못했어요 — 잠시 후 다시 해 주세요'); }
+  } else { renderExtra(extra.filter(x => x !== a), true); ls.set(LOCAL, extra); }
+  sync();
+});
+
+// 붙여넣은 목록 인식: "1. 「제목」 (출처)" 다음 줄 "https://…" 가 기본, "1. 제목 - https://…", "[제목](https://…)" 도 된다
+const clean = t => t.replace(/\*\*/g, '').replace(/^\s*(\d+\s*[.)]|[-*•]|\[\d+\])\s*/, '')
+  .replace(/^(제목|title)\s*[:：]\s*/i, '').replace(/(url|링크|주소|원문)\s*[:：]?\s*$/i, '')
+  .replace(/^[\s:|\-–—·<(]+|[\s:|\-–—·<(]+$/g, '').trim();
+const head = line => {  // 제목 줄 → { t, s }  「」나 『』로 감싼 제목 뒤 (출처)는 출처로
+  const q = line.match(/[「『“"]([^」』”"]+)[」』”"]\s*(?:[(（]([^)）]+)[)）])?/);
+  return q ? { t: q[1].trim(), s: (q[2] || '').trim() } : { t: clean(line), s: '' };
+};
+const parse = text => {
+  const out = []; let title = null;
+  for (const line of text.split(/\r?\n/).map(l => l.trim()).filter(Boolean)) {
+    const md = line.match(/\[([^\]]+)\]\((https?:\/\/[^)\s]+)\)/);
+    const m = md ? null : line.match(/https?:\/\/[^\s<>()\[\]"'」]+/);
+    if (md || m) {
+      const u = md ? md[2] : m[0].replace(/[.,;]+$/, '');
+      const before = md ? null : line.slice(0, m.index).replace(/(url|링크|주소|원문)\s*[:：]?\s*$/i, '').trim();
+      const h = md ? { t: clean(md[1]), s: '' } : before && clean(before) ? head(before) : title || { t: '', s: '' };
+      if (h.t) out.push({ t: h.t, u, s: h.s || host(u) });
+      title = null;
+    } else if (/^\s*(\d+\s*[.)]|\[\d+\])/.test(line) || !title) title = head(line);
+  }
+  return out;
+};
+
+const dlg = document.querySelector('.dlg'), ta = dlg.querySelector('textarea'), msg = dlg.querySelector('.msg');
+const pw = dlg.querySelector('.pw'), ok = dlg.querySelector('.ok');
+document.querySelector('.bar .add').addEventListener('click', () => {
+  msg.textContent = ''; pw.hidden = !STORE || !!ls.get(PW, ''); dlg.hidden = false; ta.focus();
+});
+dlg.querySelector('.cancel').addEventListener('click', () => { dlg.hidden = true; });
+ok.addEventListener('click', async () => {
+  const got = parse(ta.value), seen = new Set(items().map(a => a.u)), fresh = [];
+  got.forEach(a => { if (!seen.has(a.u)) { seen.add(a.u); fresh.push(a); } });
+  if (!fresh.length) { msg.textContent = got.length ? '이미 목록에 있는 기사입니다' : '제목과 주소(https://…)를 찾지 못했습니다'; return; }
+  const before = new Set(extra.map(a => a.id));
+  if (STORE) {
+    const key = pw.hidden ? ls.get(PW, '') : pw.value.trim();
+    if (!key) { pw.hidden = false; msg.textContent = '비밀번호를 넣어 주세요 (처음 한 번만)'; return; }
+    ok.disabled = true; msg.textContent = '저장 중…';
+    try {
+      renderExtra(await api({ key, items: ls.get(LOCAL, []).concat(fresh) }), true);  // 저장소 이전에 이 기기에 넣어 둔 기사도 함께 올린다
+      ls.set(PW, key); ls.set(LOCAL, null);
+    } catch (x) {
+      ok.disabled = false;
+      if (x.message === 'password') { ls.set(PW, null); pw.hidden = false; msg.textContent = '비밀번호가 맞지 않아요'; }
+      else msg.textContent = '저장하지 못했어요 — 잠시 후 다시 해 주세요';
+      return;
+    }
+    ok.disabled = false;
+  } else {
+    renderExtra(extra.concat(fresh.map((a, k) => ({ ...a, id: Date.now().toString(36) + k }))), true);
+    ls.set(LOCAL, extra);
+  }
+  sync();
+  ta.value = ''; dlg.hidden = true;
+  const first = lis().find((li, i) => i >= N && !before.has(extra[i - N].id));
+  if (first) first.scrollIntoView({ behavior: 'smooth', block: 'center' });
+  if (got.length > fresh.length) alert(fresh.length + '건 추가 (이미 있는 ' + (got.length - fresh.length) + '건 제외)');
+});
+
+const L = u => ({ webUrl: u, mobileWebUrl: u });
+const base = location.origin + location.pathname;
+// 주소 안의 주소는 꼭 필요한 글자(% & # +)만 바꿔 넣는다 — 전부 인코딩하면 길어져 메시지 크기 제한에 걸린다
+const via = i => base + (i < N ? '?go=' + i : '?u=' + items()[i].u.replace(/[%&#+]/g, c => '%' + c.charCodeAt(0).toString(16).toUpperCase()));
+btn.addEventListener('click', () => {
+  if (!window.Kakao) return alert('카카오 SDK를 불러오지 못했습니다');
+  if (!link) return alert('공유 준비 중입니다. 다시 눌러 주세요');
+  if (!Kakao.isInitialized()) Kakao.init(D.key);
+  const all = items(), idx = sel.map(idxOf);
+  if (idx.length === 1) {
+    return Kakao.Share.sendDefault({ objectType: 'text', text: '🔐 ' + all[idx[0]].t + '\n' + all[idx[0]].s,
+      link: L(via(idx[0])), buttonTitle: '기사 보기' });
+  }
+  const tpl = {
+    objectType: 'list',
+    headerTitle: D.title,
+    // 추가 기사를 주소에 싣는 경우(저장소 없음) 머리말까지 그 링크를 넣으면 크기 제한에 걸리기 쉬워 오늘 전체 목록으로
+    headerLink: L(link.page.length > 300 ? base : link.page),
+    contents: idx.slice(0, 3).map(i => ({ title: all[i].t, description: all[i].s, link: L(via(i)) })),
+    buttons: [{ title: '전체 보기', link: L(link.page) }],
+  };
+  if (new TextEncoder().encode(JSON.stringify(tpl)).length > MAX_MSG)
+    return alert('카카오 메시지 크기 제한을 넘어 공유할 수 없어요.\n'
+      + '직접 추가한 기사(지금 ' + link.extra + '건)를 몇 개 빼고 다시 공유해 주세요.');
+  Kakao.Share.sendDefault(tpl);
+});
+
+if (pick) showPicked().catch(() => document.documentElement.classList.remove('picking'));
+else {
+  renderExtra(STORE ? [] : ls.get(LOCAL, []).map((a, k) => ({ ...a, id: a.id || "l" + k })), true);
+  sync();
+  if (STORE) api().then(list => {
+    ready = true; renderExtra(list, true); sync();
+    const left = ls.get(LOCAL, []), key = ls.get(PW, '');
+    if (left.length && key) api({ key, items: left }).then(l => { renderExtra(l, true); sync(); ls.set(LOCAL, null); }).catch(() => {});
+  }).catch(() => { ready = true; sync(); cnt.textContent = '추가 기사를 불러오지 못했어요'; });
+}
+</script></body></html>
